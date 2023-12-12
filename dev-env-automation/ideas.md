@@ -4,3 +4,31 @@
     - to save time, the second step in the testing pipeline is run before the intermediate outputs are validated (manually), so that time is saved
 - should have a single window that's uncategorized todos
 
+## dev
+- superoperation (sop)
+    - an operation or activity context that allows integration between multiple:
+        - languages
+        - programming interfaces
+        - networked devices
+    - each instance of a sop has its own state, with versioned history of its state
+        - can be stored in git internals
+        - state includes the versions of its dependencies
+        - all versions of all states are stored, with "event-sourcing"-like behavioro- old state can be archived (can happen automatically)
+        - archived state can be deleted (happens manually)
+    - it has its own DSL with many ways of specifying the same things (for brevity)
+        - ideally with very little syntactical sugar
+        - more advanced requirements can use different versions of sop DSLs
+- supercontext (soc)
+    - essentially a modularization or individuation of several tools, frameworks, processes, servers, shells, activities, views, datasets, or any interactable component in a system
+    - allows the abstraction of a "thing" or "entity" inside a system (whether it be a local computer, a cloud-based service, an object in a particular language, or a data instance stored somewhere in a (possibly distributed) network environment
+    - supercontexts abstract away the infrastructure and language-specific, data-storage-specific, and give an abstract interface to a "thing" or "action" (actions always act on some things)
+    - supercontexts therefore interact with each other, and are virtualized.
+        - that is, they run on some particular supercontext-system that instantiates their interfaces, and manages the language/framework/system-specific instances
+        - the supercontext-systems also spin up, cache, load, initialize, etc various components needed for different supercontexts to interact
+        - if thera are N aspects of a supercontext (e.g. a framework, language, backend), there are therefore N x N possible interconnections between supercontexts
+            - therefore we only want to instantiate the interconnection interfaces that we will be using, lazily
+            - if an interconnection doesn't exist, we can try to find an interconnection path between known connection types
+                - this is known as a complex interconnection
+                - though possibly at a loss of efficiency
+                - the supercontext-system monitors interconnection usage
+                - if a complex interconnection-type is used a lot, it may be worthwhile to build a direct interconnection, which saves translations and interconnection hops 

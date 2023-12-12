@@ -121,6 +121,18 @@ Use this structure to visualize the progression of tasks in your workflow
         - in memory queue
 - parsing and compilation
     - antlr and bison
+- cli string operations
+    - https://github.com/abhimanyu003/sttr
+- cli glue tools (TUI)
+    - https://github.com/charmbracelet/bubbletea
+- markdown rendering
+    - https://github.com/charmbracelet/glamour
+- markdown based slides
+    - https://github.com/maaslalani/slides
+    - https://sli.dev/
+    - https://github.com/d0c-s4vage/lookatme
+- tui stuff
+    - https://charm.sh/libs/
 
 
 # java tools
